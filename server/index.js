@@ -8,9 +8,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
-import authRoutes from "./routes/auth";
-import userRoutes from "./routes/users";
-import { register } from "./controllers/auth";
+import authRoutes from "./routes/auth.js";
+import { register } from './controllers/auth.js';
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -43,7 +42,7 @@ app.post("/auth/register", upload.single("picture"), register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
-app.use("/users", userRoutes);
+// app.use("/users", userRoutes);
 
 /* MONGOOSE SETUP */
 mongoose.set('strictQuery', true);

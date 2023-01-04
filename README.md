@@ -11,3 +11,15 @@
 + morgan (for logging)
 + jsonwebtoken (for authentication)
 + mongoose (for mongodb access)
+
+### Register User JSON Data:
+{
+    "firstName": "Yash",
+    "lastName": "Patel",
+    "email": "yashp@gmail.com",
+    "password": "yash123",
+    "picturePath": "",
+    "friends": [],
+    "location": "Ahmedabad",
+    "occupation": "Student"
+}

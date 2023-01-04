@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import User from "../models/User";
+import User from "../models/User.js";
 
 /* REGISTER USER */
 export const register = async (req, res) => {
@@ -23,7 +23,7 @@ export const register = async (req, res) => {
             firstName,
             lastName,
             email,
-            passwordHash,
+            password: passwordHash,
             picturePath,
             friends,
             location,
@@ -34,14 +34,14 @@ export const register = async (req, res) => {
 
         const savedUser = await newUser.save();
         
-        res.status(201).json(savedUser);
+        return res.status(201).json(savedUser);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        return res.status(500).json({ error: err.message });
     }
 }
 
 /* LOGIN USER */
-export default login = async (req, res) => {
+export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
@@ -54,8 +54,8 @@ export default login = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         delete user.password;
         
-        res.status(200).json({ token, user });
+        return res.status(200).json({ token, user });
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        return res.status(500).json({ error: err.message });
     }
 }

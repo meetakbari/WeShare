@@ -12,7 +12,10 @@
 + jsonwebtoken (for authentication)
 + mongoose (for mongodb access)
 
-### Register User JSON Data:
+#### MongoDB database name to pass in MONGO_URL
++ weShareDB
+
+### Register User Raw JSON Data:
 {
     "firstName": "Yash",
     "lastName": "Patel",
@@ -23,3 +26,13 @@
     "location": "Ahmedabad",
     "occupation": "Student"
 }
+
+### To add test data from ./data/index.js to DB, edit server/index.js as follows:
++ Add this imports after end of all the imports
+    import User from "./models/User.js";
+    import Post from "./models/Post.js";
+    import { users, posts } from './data/index.js';
++ Add this lines inside the promise after app.listen(port,); line
+    User.insertMany(users);
+    Post.insertMany(posts);
+    console.log('Test data added to DB');

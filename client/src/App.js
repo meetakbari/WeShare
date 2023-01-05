@@ -19,9 +19,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            <Route exact path="/" element={<LoginPage />} />
-            <Route exact path="/home" element={<HomePage />} />
-            <Route exact path="/profile/:userId" element={<ProfilePage />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/profile/:userId" element={<ProfilePage />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

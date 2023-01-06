@@ -33,7 +33,7 @@ const LoginPage = () => {
                     Welcome to WeShare, your way to share stories!
                 </Typography>
 
-            <Form />
+                <Form />
             </Box>
         </Box>
 

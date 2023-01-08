@@ -21,7 +21,7 @@
 + formik (for form handling)
 + yup (for validation)
 + react-router-dom@6 (for handling different react routes and pages)
-+ Multiple Material-UI libraries: @mui/material, @emotion/react, @emotion/styled, @mui/icons-material
++ Material-UI libraries: @mui/material, @emotion/react, @emotion/styled, @mui/icons-material
 
 #### MongoDB database name to pass in MONGO_URL
 + weShareDB

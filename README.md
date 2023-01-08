@@ -23,7 +23,7 @@
 + react-router-dom@6 (for handling different react routes and pages)
 + Material-UI libraries: @mui/material, @emotion/react, @emotion/styled, @mui/icons-material
 
-#### MongoDB database name to pass in MONGO_URL
+#### MongoDB Database name
 + weShareDB
 
 ### Register User Raw JSON Data:
@@ -37,13 +37,3 @@
     "location": "Ahmedabad",
     "occupation": "Student"
 }
-
-### To add test data from ./data/index.js to DB, edit server/index.js as follows:
-+ Add this imports after end of all the imports
-    import User from "./models/User.js";
-    import Post from "./models/Post.js";
-    import { users, posts } from './data/index.js';
-+ Add this lines inside the promise after app.listen(port,); line
-    User.insertMany(users);
-    Post.insertMany(posts);
-    console.log('Test data added to DB');

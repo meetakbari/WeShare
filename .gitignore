@@ -6,3 +6,6 @@ server/package-lock.json
 # client
 client/node_modules/
 client/package-lock.json
+
+# misc
+SideNotes.md
